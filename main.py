@@ -7,7 +7,7 @@ from flask import Flask, jsonify
 app = Flask(__name__)
 
 
-@app.route("/index/<queryTerm>/<int:count>")
+@app.route("/<queryTerm>/<int:count>")
 def analyse(queryTerm, count):
     fetch_tweets.fetch_tweets(queryTerm, count)
     clean_tweets.clean_tweets(queryTerm)
