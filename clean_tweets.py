@@ -4,7 +4,6 @@ from threading import current_thread
 import db_conn
 import nltk
 from nltk.corpus import stopwords
-# nltk.download()
 
 
 def clean_tweets(queryTerm):

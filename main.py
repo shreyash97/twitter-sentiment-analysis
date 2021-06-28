@@ -31,10 +31,12 @@ def analyse(queryTerm, count):
             pos_count += 1
         else:
             neu_count += 1
-    result = {'Keyword': queryTerm, 'Total Positive Tweets': pos_count,
-              'Total Negative Tweets': neg_count, 'Total Neutral Tweets': neu_count}
+    res = {'Keyword': queryTerm, 'pos': pos_count,
+           'neg': neg_count, 'neu': neu_count}
+    result = jsonify(res)
+    result.headers.add('Access-Control-Allow-Origin', '*')
 
-    return jsonify(result)
+    return result
 
 
 if __name__ == '__main__':
